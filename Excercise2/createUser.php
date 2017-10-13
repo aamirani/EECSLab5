@@ -22,4 +22,5 @@ if ($result = $mysqli->query($query)) {
 
 /* close connection */
 $mysqli->close();
+echo'<h3>Check</h3>'
 ?>
