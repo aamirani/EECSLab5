@@ -7,7 +7,7 @@
     <title>View User Posts</title>
 </head>
 <body>
-    <form action="viewUserPosts.php">
+    <form action="viewUserPosts.php" method="POST">
         <select>
         <?php
         $mysqli = new mysqli("mysql.eecs.ku.edu", "aamirani", 'P@$$word123', "aamirani");
