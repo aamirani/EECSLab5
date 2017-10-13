@@ -7,6 +7,15 @@ if ($mysqli->connect_errno) {
     exit();
 }
 
+echo'<table border=1;"><tr><th>Users</th></tr>';
+
+
+$result = $mysqli->query("SELECT * FROM Users");
+    while($row = $result->fetch_assoc()) {
+        echo"<tr><td>" . $row['user_id'] . "</td></tr>";
+}
+
+
 /* close connection */
 $mysqli->close();
 ?>
