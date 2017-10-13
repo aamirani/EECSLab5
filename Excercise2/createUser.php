@@ -1,26 +1,32 @@
 <?php
-$mysqli = new mysqli("mysql.eecs.ku.edu", "aamirani", "P@$$word123", "aamirani");
+$user = $_POST['username'];
+$mysqli = new mysqli("mysql.eecs.ku.edu", "aamirani", 'P@$$word123', "aamirani");
 
 /* check connection */
 if ($mysqli->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
+$newuser =  "INSERT INTO Users (user_id)
+VALUES ('$user')"; 
+if($mysqli->query($newuser) === TRUE){
+    echo'New Record Created Successfully';
+}
+else{
+    echo'Failed to create new user, cannot be blank or already existing';
+}
 
-$query = "SELECT Name, CountryCode FROM City ORDER by ID DESC LIMIT 50,5";
-
-if ($result = $mysqli->query($query)) {
-
-    /* fetch associative array */
-    while ($row = $result->fetch_assoc()) {
-        printf ("%s (%s)\n", $row["Name"], $row["CountryCode"]);
+$list = "SELECT user_id FROM Users";
+$result = $mysql->query($list);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo "User: " . $row["user_id"] . "<br>";
     }
-
-    /* free result set */
-    $result->free();
+} 
+else{
+    echo "0 Users";
 }
 
 /* close connection */
 $mysqli->close();
-echo'<h3>Check</h3>'
 ?>
