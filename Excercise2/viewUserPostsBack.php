@@ -8,7 +8,7 @@
             exit();
         }
         
-        
+        echo'Posts from ' . $username . ':';
         $result = $mysqli->query("SELECT * FROM Posts WHERE author_id ='$username'");
             while($row = $result->fetch_assoc()) {
                 echo'<p>' . $row['content'] . '.<br></p>';
