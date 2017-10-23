@@ -12,7 +12,7 @@
             <thead>
                 <th>Author</th>
                 <th>Post</th>
-                <th>Delete</th>
+                <th>Delete?</th>
             </thead>
             <tbody>
             <?php
