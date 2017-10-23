@@ -7,8 +7,8 @@
     <title>View User Posts</title>
 </head>
 <body>
-    <form action="viewUserPosts.php" method="POST">
-        <select>
+    <form action="viewUserPostsBack.php" method="POST">
+        <select name="userselection">
         <?php
         $mysqli = new mysqli("mysql.eecs.ku.edu", "aamirani", 'P@$$word123', "aamirani");
         
@@ -24,12 +24,12 @@
                 echo'<option value="' . $row['user_id'] . '">' . $row['user_id'] . '</option>';
         }
         
-        
         /* close connection */
         $mysqli->close();
         ?>
         </select>
         <button type="submit">Submit</button>
     </form>
+
 </body>
 </html>
