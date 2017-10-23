@@ -10,7 +10,7 @@
     <form action="deletePost.php" method="POST">
         <table>
             <thead>
-                <th>User</th>
+                <th>Author</th>
                 <th>Post</th>
                 <th>Delete</th>
             </thead>
